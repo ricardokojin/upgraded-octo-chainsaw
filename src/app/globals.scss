@@ -1,5 +1,7 @@
 // @import './styles/variables.scss';
+
 @use './styles/variables.scss' as globals;
+
 :root {
   --background: #ffffff;
   --foreground: globals.$color_main_dark;
