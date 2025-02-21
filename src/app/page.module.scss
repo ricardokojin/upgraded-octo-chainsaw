@@ -15,31 +15,7 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
   font-family: "Outfit", serif;
 }
 
-.page_home_powered_by_tag {
-  position: fixed;
-  bottom: 0;
-  right: 60px;
-  z-index: 9999;
-  padding: 10px;
-  background-color: #b6acdd;
-  background-color: #d3d3d3;
-  background-color: #e1e0fd;
-  background-color: #e8e3f1;
-  background-repeat: repeat;
-  // background-color: #b5a5e2;
-  color: #383743;
-  box-shadow: -1px -2px 4px rgba(10, 10, 10, 0.4);
-  // background-image: url("../../public/brushed-alum-dark.png");
-  // background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
-  background-size: cover;
-  @extend .title_style;
-  @media only screen and (max-width: globals.$width_md) {
-    position: relative;
-    right: 0;
-    left: 0;
-    text-align: center;
-  }
-}
+
 .page_home_main {
   h1,
   h2,
@@ -55,30 +31,34 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
   }
   background-color: #f0eded;
   background-color: #e9e5e5;
-  // background-image: url("../../public/clean-textile.png");
-  background-size: cover;
+  background-color: #ffffff;
+  background-image: url("../../public/gradient-squares.png");
   background-repeat: repeat;
+  min-height: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #403e43;
-  padding: 34px;
-  @media only screen and (max-width: globals.$width_md) {
-    padding-top: 40px;
+  .page_home_card_layer{
+    background-color: rgb(255 255 255 / 71%);
+    border-radius: 8px;
+    padding: 22px;
   }
+  // padding: 34px;
+  // @media only screen and (max-width: globals.$width_md) {
+  //   padding-top: 90px;
+  // }
   .page_home_main_stack {
     display: flex;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(232, 227, 227, 0.4);
     max-width: 700px;
+    // margin-top: -5vh;
     // padding: 7px 0;
     .page_home_box_title {
-      margin: 0;
-      margin-top: 0px;
       font-weight: 400;
       font-size: 2.125rem;
       line-height: 1.235;
@@ -87,67 +67,11 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
       font-size: 38px;
       font-weight: 600;
       // padding-inline: 16px;
-      padding: 10px 10px 10px 0;
       @media only screen and (max-width: globals.$width_md) {
         margin-top: 0;
       }
     }
-    .page_home_box_grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-      .page_home_box_grid_box_1 {
-        padding: 10px;
-        grid-column: 1 / 4;
-        grid-row: 1;
-        @media only screen and (max-width: globals.$width_md) {
-          grid-column: 1 / 7;
-          grid-row: 1 / 2;
-        }
-        .page_home_list {
-          list-style: none;
-          .page_home_list_item {
-            .page_home_list_icon {
-              width: 10px;
-              height: 10px;
-              display: inline-block;
-              border-radius: 30%;
-              align-self: center;
-              margin-left: 7px;
-            }
-            @for $i from 1 through list.length($colors) {
-              $colorValue: list.nth($colors, $i);
-              &:nth-child(#{$i}) {
-                .page_home_list_icon {
-                  background-color: $colorValue;
-                }
-              }
-            }
-          }
-        }
-      }
 
-      .page_home_box_grid_box_2 {
-        grid-column: 4 / 7;
-        grid-row: 1;
-        padding: 21px;
-        padding-top: 5px;
-        display: flex;
-        justify-content: center;
-        img {
-          transform: rotate(0.3deg);
-          box-shadow: 2px 2px 6px rgba(36, 26, 73, 0.4);
-          border-radius: 17px;
-          @media only screen and (max-width: globals.$width_md) {
-            max-width: 80%;
-          }
-        }
-        @media only screen and (max-width: globals.$width_md) {
-          grid-column: 1 / 7;
-          grid-row: 2 / 3;
-        }
-      }
-    }
   }
 }
 
@@ -164,4 +88,94 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
     stroke-width: 5px;
     opacity: 0.1;
   }
+}
+
+
+.page_home_list {
+  list-style: none;
+  .page_home_list_item {
+    .page_home_list_icon {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 30%;
+      align-self: center;
+      margin-left: 7px;
+    }
+    @for $i from 1 through list.length($colors) {
+      $colorValue: list.nth($colors, $i);
+      &:nth-child(#{$i}) {
+        .page_home_list_icon {
+          background-color: $colorValue;
+        }
+      }
+    }
+  }
+}
+
+// Grid Config.......................................
+.page_home_box_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  .page_home_box_grid_box_1 {
+    padding: 10px;
+    grid-column: 1 / 4;
+    grid-row: 1;
+    @media only screen and (max-width: globals.$width_md) {
+      grid-column: 1 / 7;
+      grid-row: 1 / 2;
+    }
+  }
+  .page_home_box_grid_box_2 {
+    grid-column: 4 / 7;
+    grid-row: 1;
+    padding: 21px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    img {
+      transform: rotate(0.3deg);
+      box-shadow: 2px 2px 6px rgba(36, 26, 73, 0.4);
+      border-radius: 17px;
+      @media only screen and (max-width: globals.$width_md) {
+        max-width: 80%;
+      }
+    }
+    @media only screen and (max-width: globals.$width_md) {
+      grid-column: 1 / 7;
+      grid-row: 2 / 3;
+    }
+  }
+}
+
+.page_home_powered_by_tag {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 9999;
+  padding: 10px;
+  background-color: #b6acdd;
+  background-color: #d3d3d3;
+  background-color: #e1e0fd;
+  background-color: #e8e3f1;
+  background-repeat: repeat;
+  background-color: #e9e9e9;
+  background-color: rgb(157 197 225 / 40%);
+  background-color: rgb(111 184 215);
+  background-color: #ebe3e9;
+  // background-color: #b5a5e2;
+  color: #383743;
+  box-shadow: -1px -2px 4px rgb(138 130 130 / 30%);
+  background-image: url("../../public/cardboard-flat.png");
+  // background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  // background-size: cover;
+  background-repeat: repeat;
+  @extend .title_style;
+  // @media only screen and (max-width: globals.$width_md) {
+  //   position: relative;
+  //   right: 0;
+  //   left: 0;
+  //   text-align: center;
+  // }
 }

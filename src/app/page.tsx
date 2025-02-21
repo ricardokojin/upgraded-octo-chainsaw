@@ -58,8 +58,8 @@ export default function Home() {
   ];
 
   return (
-    <>
-      <Box component={"main"} className={`${styles.page_home_main}`}>
+    <Box component={"main"} className={`${styles.page_home_main}`}>
+      <Box className={`${styles.page_home_card_layer}`}>
         <Stack className={`${styles.page_home_main_stack}`}>
           <Typography
             variant="h4"
@@ -67,17 +67,17 @@ export default function Home() {
             className={`${styles.page_home_box_title}`}
           >
             Experience Gate: 21.15.3
-            <span
+            {/* <span
               className={styles.home_logo}
               dangerouslySetInnerHTML={{ __html: icons.logo2 }}
-            />
+            /> */}
           </Typography>
-          <Box className={`${styles.page_home_box_grid}`} sx={{mt:2}}>
+          <Box className={`${styles.page_home_box_grid}`} sx={{ mt: 2 }}>
             <Box className={`${styles.page_home_box_grid_box_1}`}>
               <Typography>
                 Welcome to collection 21.15.3 of pages, you may not find
-                everything you need here but I hope {`${"you'll"}`} find something you
-                enjoy. As for the image ... well, I like it.
+                everything you need here but I hope {`${"you'll"}`} find
+                something you enjoy. As for the image ... well, I like it.
               </Typography>
               <Box sx={{ mt: 3 }}>
                 <ul className={`${styles.page_home_list}`}>
@@ -105,7 +105,7 @@ export default function Home() {
                 }
               >
                 <Button
-                  id={'home_anywhere_button'}
+                  id={"home_anywhere_button"}
                   sx={{ mt: 2 }}
                   variant="contained"
                   size="large"
@@ -127,8 +127,14 @@ export default function Home() {
             </Box>
           </Box>
         </Stack>
+
+        <Box
+          id="home_powered_by"
+          className={`${styles.page_home_powered_by_tag}`}
+        >
+          <Typography>Powered By Me</Typography>
+        </Box>
       </Box>
-      <Box id="home_powered_by" className={`${styles.page_home_powered_by_tag}`}><Typography>Powered By Me</Typography></Box>
-    </>
+    </Box>
   );
 }
