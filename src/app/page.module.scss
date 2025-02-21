@@ -29,7 +29,7 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
   // background-color: #b5a5e2;
   color: #383743;
   box-shadow: -1px -2px 4px rgba(10, 10, 10, 0.4);
-  background-image: url("../../public/brushed-alum-dark.png");
+  // background-image: url("../../public/brushed-alum-dark.png");
   // background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
   background-size: cover;
   @extend .title_style;
@@ -55,7 +55,7 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
   }
   background-color: #f0eded;
   background-color: #e9e5e5;
-  background-image: url("../../public/clean-textile.png");
+  // background-image: url("../../public/clean-textile.png");
   background-size: cover;
   background-repeat: repeat;
   min-height: 100vh;
@@ -87,6 +87,7 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
       font-size: 38px;
       font-weight: 600;
       // padding-inline: 16px;
+      padding: 10px 10px 10px 0;
       @media only screen and (max-width: globals.$width_md) {
         margin-top: 0;
       }
@@ -94,8 +95,9 @@ $colors: red, blue, green, purple, rgb(141, 48, 212), orange;
     .page_home_box_grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 24px;
+      gap: 12px;
       .page_home_box_grid_box_1 {
+        padding: 10px;
         grid-column: 1 / 4;
         grid-row: 1;
         @media only screen and (max-width: globals.$width_md) {
