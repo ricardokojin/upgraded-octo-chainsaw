@@ -10,7 +10,7 @@ import image_box_2 from "../../public/output54.png";
 import { Typography, Box, Stack, Button, Tooltip, Chip } from "@mui/material";
 import styles from "./page.module.scss";
 
-import { icons } from "./utils/iconPack";
+// import { icons } from "./utils/iconPack";
 // import { ST } from "next/dist/shared/lib/utils";
 // import { ReactElement } from "react";
 import { JSX } from "react";
