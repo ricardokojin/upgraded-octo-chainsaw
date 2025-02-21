@@ -3,10 +3,15 @@ $test_color_2:rgb(248, 154, 61);
 $test_color_3: rgb(135, 246, 225);
 $test_color_4: rgb(84, 255, 184);
 
+$color_main_dark:#0b1417;
 
-$color_main_dark: #1a1919;
+$width_xl:1536px;
+$width_lg:1200px;
+$width_md:900px;
+$width_sm:600px;
+$width_xs:0px;
 
-$width_xl:1300px;
-$width_lg:800px;
-$width_md:600px;
-$width_sm:450px;
+$base_padding:8px;
+$paddingClasses: (('1',$base_padding * 1),('2',$base_padding * 2),('3',$base_padding * 3),('4',$base_padding * 4),('5',$base_padding * 5));
+
+

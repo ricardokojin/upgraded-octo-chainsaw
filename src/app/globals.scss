@@ -1,77 +1,124 @@
-// @import './styles/variables.scss';
+@use "./styles/variables.scss" as globals;
+@use "sass:list";
 
-@use './styles/variables.scss' as globals;
-
-:root {
-  --background: #ffffff;
-  --foreground: globals.$color_main_dark;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+h1,h2,h3,h4{
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: globals.$color_main_dark;
-    --foreground: #ededed;
-  }
+// Clean up defaults.............
+.clearDefaults {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  padding: 0;
-  margin: 0;
-  background-color: globals.$color_main_dark;
+body,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+div {
+  @extend .clearDefaults;
+}
+html {
+  ul {
+    gap: 8px;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    li {
+      display: inline-flex;
+    }
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+// generates global_padding_x classes
+@each $padding in globals.$paddingClasses {
+  $className: list.nth($padding, 1);
+  $classValue: list.nth($padding, 2);
+  .global_padding_#{$className} {
+    padding: #{$classValue};
+  }
 }
 
-
-.container_center{
-  // background-color: globals.$test_color_1;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container_xl, .container_lg, .container_md, .container_sm{
-  width: 100%;
-}
-
-.container_xl{
-  max-width: globals.$width_xl;
-}
-
-.container_lg{
-  max-width: globals.$width_lg;
-}
-
-.container_md{
-  max-width: globals.$width_md;
-}
-
-.container_sm{
-  max-width: globals.$width_sm;
-}
-
-
-// * {
-//   box-sizing: border-box;
-//   padding: 0;
-//   margin: 0;
-// }
-
-// a {
-//   color: inherit;
-//   text-decoration: none;
+// :root {
+//   --background: #ffffff;
+//   --foreground: globals.$color_main_dark;
 // }
 
 // @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
+//   :root {
+//     --background: globals.$color_main_dark;
+//     --foreground: #ededed;
 //   }
 // }
+
+// html,
+// body {
+//   max-width: 100vw;
+//   overflow-x: hidden;
+//   padding: 0;
+//   margin: 0;
+//   background-color: globals.$color_main_dark;
+// }
+
+// body {
+//   color: var(--foreground);
+//   background: var(--background);
+//   font-family: Arial, Helvetica, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// .container_center{
+//   // background-color: globals.$test_color_1;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// .container_xl, .container_lg, .container_md, .container_sm{
+//   width: 100%;
+// }
+
+// .container_xl{
+//   max-width: globals.$width_xl;
+// }
+
+// .container_lg{
+//   max-width: globals.$width_lg;
+// }
+
+// .container_md{
+//   max-width: globals.$width_md;
+// }
+
+// .container_sm{
+//   max-width: globals.$width_sm;
+// }
+
+// // * {
+// //   box-sizing: border-box;
+// //   padding: 0;
+// //   margin: 0;
+// // }
+
+// // a {
+// //   color: inherit;
+// //   text-decoration: none;
+// // }
+
+// // @media (prefers-color-scheme: dark) {
+// //   html {
+// //     color-scheme: dark;
+// //   }
+// // }

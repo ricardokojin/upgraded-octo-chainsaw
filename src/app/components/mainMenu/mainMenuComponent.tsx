@@ -41,6 +41,7 @@ export default function MainMenuComponent({
   };
 
   const handleClose = (path:string | null) => {
+    console.log(path)
     setAnchorEl(null);
   };
 
